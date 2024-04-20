@@ -507,15 +507,112 @@ The two general trends that can be observed in these examples—in concurrence w
 
             <!-- <br></br> -->
             <hr>
-            <h2 id="Limitations">
-              <font color="000093">Limitations</font>
-            </h2>
+            <p><b>
+                <font color="000093">Limitations</font>
+              </b></p>
             <div class="container">
               <p>
-                <strong>Tango 2</strong> is based on <i>Tango</i> which was trained on the relatively small <i>AudioCaps</i> dataset. Thus, it may not generate good audio samples related to concepts unseen in the training (e.g., rooster crowing). Similarly, the preference dataset <a href="https://huggingface.co/datasets/339wef0493/audio-alpaca"><code>Audio-alpaca</code></a> is also synthetically derived from the training set of the very same <i>AudioCaps</i> dataset. Such datasets often contain some level of noise. Thus, <strong>Tango 2</strong> is not always able to finely follow the instructions in the textual control prompts.
+                <strong>Tango 2</strong> is based on <i>Tango</i> which was trained on the relatively small <i>AudioCaps</i> dataset. Thus, it may not generate good audio samples related to concepts unseen in the training (e.g., rooster crowing). Similarly, the preference dataset <a href="https://huggingface.co/datasets/339wef0493/audio-alpaca"><code>Audio-alpaca</code></a> is also synthetically derived from the training set of the very same <i>AudioCaps</i> dataset. Such datasets often contain some level of noise. Thus, <strong>Tango 2</strong> is not always able to finely follow the instructions in the textual control prompts. Furthermore, we also observed a more persistent backgrond drone in <strong>Tango 2</strong> audios over <i>Tango</i>, especially in the single-event cases, as shown below. 
                 <!-- For example, the generations from TANGO for prompts 'Chopping tomatoes on a wooden table' and 'Chopping potatoes on a metal table' are very similar. 'Chopping vegetables on a table' also produces similar audio samples. Training text-to-audio generation models on larger datasets is thus required for the model to learn the composition of textual concepts and varied text-audio mappings. We are training another verison of TANGO on larger datasets to enhance its generalization, compositional and controllable generation ability. -->
               </p>
             </div>            
+            <!-- <p><b> -->
+            <!--     <font color="000093">Single-Event Comparison (Tango 2 has more persistent background hum)</font> -->
+            <!--   </b></p> -->
+            <h2 id="Limitations">
+              <font color="000093">Single-Event Comparison (<strong>Tango 2</strong> has more persistent background hum)</font>
+            </h2>
+
+<table class="table" align="center" style="table-layout: fixed;word-break:break-word">
+  <thead>
+    <tr>
+      <th>Text Description
+	      <!-- <br> -->
+	      <!-- <div style="color:#007bff;font-size:medium;"> -->
+	      <!-- </div> -->
+      </th>
+      <th>TANGO</th>
+      <th>TANGO 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A toilet flushing</td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango1/output_201_tango.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango2/output_201_run29.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>An emergency siren blaring steadily</td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango1/output_270_tango.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango2/output_270_run29.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>A flock of sheep baaing</td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango1/output_158_tango.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango2/output_158_run29.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>A person snores</td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango1/output_100_tango.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango2/output_100_run29.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+    </tr>
+    <tr>
+      <td>A sprayer is spraying surfaces</td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango1/output_776_tango.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+      <td>
+        <audio controls="controls">
+          <source src="./samples/tango2/output_776_run29.wav" type="audio/wav">
+          Your browser does not support the audio element.
+        </audio>
+      </td>
+    </tr>
+  </tbody>
+</table>
             <h2 id="Acknowledgement">
               <font color="000093">Acknowledgement</font>
             </h2>
